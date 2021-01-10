@@ -20,94 +20,144 @@ public class WinCondition : MonoBehaviour
     public static bool PlayerWin = false;
     public static bool BotWin = false;
 
-    public Sprite PLayerWinBtnName;
-    public Sprite BotWinBtnName;
+    public string PLayerWinBtnName;
+    public string BotWinBtnName;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(" WinConitionChecker", 5f,0.2f);
+        /*InvokeRepeating(" WinConitionCheckerPlayer", 5f,0.2f);
+        InvokeRepeating(" WinBotChecker", 5f,0.2f);*/
     }
 
     // Update is called once per frame
     void Update()
     {
+        PLayerWinBtnName = BTNFunction.playerIcon.name;
+        BotWinBtnName = BotPlayer.BotIcon.name;
+        Debug.Log(WinBTn5.GetComponent<Image>().sprite.name);
+        Debug.Log(BotWinBtnName+"Bot Button Name");
+        Debug.Log(PLayerWinBtnName+"Player Button Name");
+        
+
        
     }
-
-
-    public void WinConitionChecker()
+    private void FixedUpdate()
     {
-        PLayerWinBtnName = BTNFunction.playerIcon;
-        BotWinBtnName = BotPlayer.BotIcon;
-        if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn2.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn3.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
+        if (PlayerWin == false)
         {
-            PlayerWin = true;
-            Debug.Log(PlayerWin);
+            /*WinConitionCheckerPlayer();*/
         }
-        else if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn4.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
+        if (BotWin == false)
         {
-            PlayerWin = true;
-        }
-        else if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
-        }
-        else if (WinBTn2.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
-        }
-        else if (WinBTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn6.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
-        }
-        else if (WinBTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn7.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
-        }
-        else if (WinBTn4.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn6.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
-        }
-        else if (WinBTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.PlayerIcon.name)
-        {
-            PlayerWin = true;
+
+
+            /*WinBotChecker();*/
         }
 
 
 
 
-        else if (WinBTn1.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn2.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn3.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn2.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "123");
+        }
+        if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn4.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "147");
+        }
+        if (WinBTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "159");
+        }
+        if (WinBTn2.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn8.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "258");
+        }
+        if (WinBTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn6.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "369");
+        }
+        if (WinBTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "357");
+        }
+        if (WinBTn4.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn6.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "456");
+        }
+        if (WinBTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn8.GetComponent<Image>().sprite.name == PLayerWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "789");
+        }
+
+
+
+
+        if (WinBTn1.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn2.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn3.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "123");
         }
-        else if (WinBTn1.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn4.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn1.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn4.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn7.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "147");
         }
-        else if (WinBTn1.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn1.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "159");
         }
-        else if (WinBTn2.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn2.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn8.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "258");
         }
-        else if (WinBTn3.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn6.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+         if (WinBTn3.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn6.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "369");
         }
-        else if (WinBTn3.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn7.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn3.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn7.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "357");
         }
-        else if (WinBTn4.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn5.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn6.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn4.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn5.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn6.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "456");
         }
-        else if (WinBTn7.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn8.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name && WinBTn9.GetComponent<Image>().sprite.name == SceneMan.BotIcon.name)
+        if (WinBTn7.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn8.GetComponent<Image>().sprite.name == BotWinBtnName && WinBTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
         {
             BotWin = true;
+            Debug.Log(BotWin + "789");
         }
+
+
     }
+
+
+  /*  public void WinConitionCheckerPlayer()
+    {
+        */
+        
+
+        
+
+    
+ /*   public void WinBotChecker() {*/
+
+        
+        
+    
 }

@@ -35,27 +35,33 @@ public class SceneMan : MonoBehaviour
     void Update()
     {
         Debug.Log(WinCondition.PlayerWin);
+        Debug.Log(WinCondition.BotWin );
 
-        if(WinCondition.PlayerWin == true)
+        if(BTNFunction.PlayerWin == true)
         {
             
             WinLossePnl.SetActive(true);
             PlayerWinText.SetActive(true);
+            Time.timeScale = 0f;
+            WinCondition.PlayerWin = false;
         }
-        if (WinCondition.BotWin == true)
+        if (BTNFunction.BotWin == true)
         {
 
             WinLossePnl.SetActive(true);
             BotWinText.SetActive(true);
+            Time.timeScale = 0f;
+            WinCondition.BotWin = false;
         }
     }
 
     public void ResetBTN()
     {
         WinLossePnl.SetActive(false);
-        BotWinText.SetActive(false);
+        BotWinText .SetActive(false);          
         PlayerWinText.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
     public void AfterChoose()
     {

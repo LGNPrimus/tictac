@@ -56,7 +56,7 @@ public class BotPlayer : MonoBehaviour
                 BTNFunction.PlayerChance = true;
                 TempRayCastOpner();
                // Debug.Log("Autobot Number=" + AutoBot + "and you are inside");
-                Debug.Log(BotIcon.name);
+                //Debug.Log(BotIcon.name);
             }
             else
             {

@@ -7,7 +7,7 @@ public class BTNFunction : MonoBehaviour
 {
     //All Individual 9 Buttons
     
-    public  GameObject BTn1 ;
+    public  GameObject BTn1;
     public  GameObject BTn2;
     public  GameObject BTn3;
     public  GameObject BTn4;
@@ -39,6 +39,13 @@ public class BTNFunction : MonoBehaviour
     public static bool BotChance = false;
 
 
+    public static bool PlayerWin = false;
+    public static bool BotWin = false;
+
+
+    public string PLayerWinBtnName;
+    public string BotWinBtnName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +59,100 @@ public class BTNFunction : MonoBehaviour
         {
             //Debug.Log("Nahi  Bhai Khali nahi h");
         }
-       // Debug.Log(BotChance);
+        // Debug.Log(BotChance);
+
+
+
+        PLayerWinBtnName = SceneMan.PlayerIcon.name;
+        BotWinBtnName = SceneMan.BotIcon.name;
+    }
+
+    private void FixedUpdate()
+    {
+        if (BTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn2.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "123");
+        }
+        if (BTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn4.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "147");
+        }
+        if (BTn1.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "159");
+        }
+        if (BTn2.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn8.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "258");
+        }
+        if (BTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn6.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "369");
+        }
+        if (BTn3.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "357");
+        }
+        if (BTn4.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn5.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn6.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "456");
+        }
+        if (BTn7.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn8.GetComponent<Image>().sprite.name == PLayerWinBtnName && BTn9.GetComponent<Image>().sprite.name == PLayerWinBtnName)
+        {
+            PlayerWin = true;
+            Debug.Log(PlayerWin + "789");
+        }
+
+
+
+
+        if (BTn1.GetComponent<Image>().sprite.name == BotWinBtnName && BTn2.GetComponent<Image>().sprite.name == BotWinBtnName && BTn3.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "123");
+        }
+        if (BTn1.GetComponent<Image>().sprite.name == BotWinBtnName && BTn4.GetComponent<Image>().sprite.name == BotWinBtnName && BTn7.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "147");
+        }
+        if (BTn1.GetComponent<Image>().sprite.name == BotWinBtnName && BTn5.GetComponent<Image>().sprite.name == BotWinBtnName && BTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "159");
+        }
+        if (BTn2.GetComponent<Image>().sprite.name == BotWinBtnName && BTn5.GetComponent<Image>().sprite.name == BotWinBtnName && BTn8.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "258");
+        }
+        if (BTn3.GetComponent<Image>().sprite.name == BotWinBtnName && BTn6.GetComponent<Image>().sprite.name == BotWinBtnName && BTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "369");
+        }
+        if (BTn3.GetComponent<Image>().sprite.name == BotWinBtnName && BTn5.GetComponent<Image>().sprite.name == BotWinBtnName && BTn7.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "357");
+        }
+        if (BTn4.GetComponent<Image>().sprite.name == BotWinBtnName && BTn5.GetComponent<Image>().sprite.name == BotWinBtnName && BTn6.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "456");
+        }
+        if (BTn7.GetComponent<Image>().sprite.name == BotWinBtnName && BTn8.GetComponent<Image>().sprite.name == BotWinBtnName && BTn9.GetComponent<Image>().sprite.name == BotWinBtnName)
+        {
+            BotWin = true;
+            Debug.Log(BotWin + "789");
+        }
     }
 
 
